@@ -13,3 +13,5 @@ assert title == 'Wirtualna Polska - Wszystko co ważne - www.wp.pl'
 sleep(2)
 
 driver.close()
+
+
