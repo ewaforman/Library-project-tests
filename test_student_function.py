@@ -62,8 +62,30 @@ class StudentTestCase(unittest.TestCase):
         message = self.driver.find_element_by_id("delete_student_answer_id").text
         self.assertEqual(message, 'Nie ma takiego studenta w bazie.')
 
-        def tearDown(self):
-            self.driver.close()
+    def test_delete_student_in_database(self):
+        student_name = self.driver.find_element_by_name("id")
+        number = self.driver.find_element_by_tag_name("td").text
+        number_int = int(number)
+        student_name.send_keys(number_int)
+        delete_student_button = self.driver.find_element_by_id("delete_student_id")
+        delete_student_button.click()
+        sleep(1)
+
+        message = self.driver.find_element_by_id("delete_student_answer_id").text
+        self.assertEqual(message, 'Usunięto studenta.')
+
+    def test_find_student_by_username(self):
+        student_username = self.driver.find_element_by_id("username_id").text
+        username_input = self.driver.find_element_by_id("input_username_id")
+        username_input.send_keys(student_username)
+        find_student_button = self.driver.find_element_by_id("find_student_id")
+        find_student_button.click()
+        sleep(1)
+        number_of_elements = len(self.driver.find_elements_by_id("username_id"))
+        self.assertEqual(number_of_elements, 1)
+
+    def tearDown(self):
+        self.driver.close()
 
 
 if __name__ == "__main__":
