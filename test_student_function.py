@@ -53,8 +53,8 @@ class StudentTestCase(unittest.TestCase):
         self.assertEqual(message, 'Taki student jest juz w bazie.')
 
     def test_delete_student_not_in_database(self):
-        student_name = self.driver.find_element_by_name("id")
-        student_name.send_keys("1")
+        student_id = self.driver.find_element_by_name("id")
+        student_id.send_keys("0")
         delete_student_button = self.driver.find_element_by_id("delete_student_id")
         delete_student_button.click()
         sleep(1)
@@ -63,10 +63,10 @@ class StudentTestCase(unittest.TestCase):
         self.assertEqual(message, 'Nie ma takiego studenta w bazie.')
 
     def test_delete_student_in_database(self):
-        student_name = self.driver.find_element_by_name("id")
+        student_id = self.driver.find_element_by_name("id")
         number = self.driver.find_element_by_tag_name("td").text
         number_int = int(number)
-        student_name.send_keys(number_int)
+        student_id.send_keys(number_int)
         delete_student_button = self.driver.find_element_by_id("delete_student_id")
         delete_student_button.click()
         sleep(1)
