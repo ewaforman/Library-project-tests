@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc803cae-f0fe-4df4-bcf9-d4bae7918e18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_hire_function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_hire_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_hire_function.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../dev/ewaforman.github.io" />
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_book_function.py">
+  <component name="RunManager" selected="Python tests.pytest in test_hire_function.py">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="selenium-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,8 +145,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest in test_book_function.py" />
         <item itemvalue="Python tests.pytest in test_hire_function.py" />
+        <item itemvalue="Python tests.pytest in test_book_function.py" />
         <item itemvalue="Python tests.test_student_function.py" />
         <item itemvalue="Python.test6" />
         <item itemvalue="Python.test1" />
@@ -179,12 +179,24 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_hire_function.py</url>
+          <line>135</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_hire_function.py</url>
-          <line>117</line>
-          <option name="timeStamp" value="2" />
+          <line>107</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>
