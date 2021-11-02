@@ -1,16 +1,13 @@
 import unittest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from time import sleep
-import string
-import random
+from converter_test import Conventer
 
 
 class StudentTestCase(unittest.TestCase):
     def setUp(self):
-        chrome_options = Options()
-        chrome_options.add_argument("--disable-web-security")
-        chrome_options.add_argument("--disable-site-isolation-trials")
+        converter = Conventer()
+        chrome_options = converter.add_chrome_options()
 
         self.driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32 (2)/chromedriver.exe',
                                   options=chrome_options)
@@ -21,11 +18,10 @@ class StudentTestCase(unittest.TestCase):
         student_surname = self.driver.find_element_by_name("surname")
         student_username = self.driver.find_element_by_name("username")
 
-        letters = list(string.ascii_lowercase)
-        surname = (''.join(random.choice(letters) for i in range(10)).title())
-        username = (''.join(random.choice(letters) for i in range(6)).title())
+        converter = Conventer()
+        name, surname, username = converter.get_random_name_surname_username()
 
-        student_name.send_keys("Emilia")
+        student_name.send_keys(name)
         student_surname.send_keys(surname)
         student_username.send_keys(username)
 
@@ -41,9 +37,13 @@ class StudentTestCase(unittest.TestCase):
         student_surname = self.driver.find_element_by_name("surname")
         student_username = self.driver.find_element_by_name("username")
 
-        student_name.send_keys("Emila")
-        student_surname.send_keys("Witkowska")
-        student_username.send_keys("EmWit")
+        name = self.driver.find_element_by_id("name_id").text
+        surname = self.driver.find_element_by_id("surname_id").text
+        username = self.driver.find_element_by_id("username_id").text
+
+        student_name.send_keys(name)
+        student_surname.send_keys(surname)
+        student_username.send_keys(username)
 
         add_student_button = self.driver.find_element_by_xpath("//button[@type='submit']")
         add_student_button.click()
@@ -86,7 +86,7 @@ class StudentTestCase(unittest.TestCase):
 
     def test_select_student_by_username_not_in_data_base(self):
         username_input = self.driver.find_element_by_id("input_username_id")
-        username_input.send_keys("student_username")
+        username_input.send_keys("&&&")
         find_student_button = self.driver.find_element_by_id("find_student_id")
         find_student_button.click()
         sleep(1)

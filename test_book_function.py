@@ -1,16 +1,13 @@
 import unittest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from time import sleep
-import string
-import random
+from converter_test import Conventer
 
 
 class BookTestCase(unittest.TestCase):
     def setUp(self):
-        chrome_options = Options()
-        chrome_options.add_argument("--disable-web-security")
-        chrome_options.add_argument("--disable-site-isolation-trials")
+        converter = Conventer()
+        chrome_options = converter.add_chrome_options()
 
         self.driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32 (2)/chromedriver.exe',
                                   options=chrome_options)
@@ -21,10 +18,8 @@ class BookTestCase(unittest.TestCase):
         author_surname = self.driver.find_element_by_name("surname")
         title_book = self.driver.find_element_by_name("title")
 
-        letters = list(string.ascii_lowercase)
-        surname = (''.join(random.choice(letters) for i in range(10)).title())
-        name = (''.join(random.choice(letters) for i in range(6)).title())
-        title = (''.join(random.choice(letters) for i in range(10)).title())
+        converter = Conventer()
+        name, surname, title = converter.get_random_name_surname_title()
 
         author_name.send_keys(name)
         author_surname.send_keys(surname)
@@ -48,8 +43,8 @@ class BookTestCase(unittest.TestCase):
     def test_add_new_book_failure_only_name(self):
         author_name = self.driver.find_element_by_name("name")
 
-        letters = list(string.ascii_lowercase)
-        name = (''.join(random.choice(letters) for i in range(6)).title())
+        converter = Conventer()
+        name, surname, title = converter.get_random_name_surname_title()
 
         author_name.send_keys(name)
 
@@ -63,8 +58,8 @@ class BookTestCase(unittest.TestCase):
     def test_add_new_book_failure_only_surname(self):
         author_surname = self.driver.find_element_by_name("surname")
 
-        letters = list(string.ascii_lowercase)
-        surname = (''.join(random.choice(letters) for i in range(10)).title())
+        converter = Conventer()
+        name, surname, title = converter.get_random_name_surname_title()
 
         author_surname.send_keys(surname)
 
@@ -78,8 +73,8 @@ class BookTestCase(unittest.TestCase):
     def test_add_new_book_failure_only_title(self):
         title_book = self.driver.find_element_by_name("title")
 
-        letters = list(string.ascii_lowercase)
-        title = (''.join(random.choice(letters) for i in range(10)).title())
+        converter = Conventer()
+        name, surname, title = converter.get_random_name_surname_title()
 
         title_book.send_keys(title)
 
@@ -94,9 +89,8 @@ class BookTestCase(unittest.TestCase):
         author_name = self.driver.find_element_by_name("name")
         author_surname = self.driver.find_element_by_name("surname")
 
-        letters = list(string.ascii_lowercase)
-        surname = (''.join(random.choice(letters) for i in range(10)).title())
-        name = (''.join(random.choice(letters) for i in range(6)).title())
+        converter = Conventer()
+        name, surname, title = converter.get_random_name_surname_title()
 
         author_name.send_keys(name)
         author_surname.send_keys(surname)
@@ -112,9 +106,8 @@ class BookTestCase(unittest.TestCase):
         author_name = self.driver.find_element_by_name("name")
         title_book = self.driver.find_element_by_name("title")
 
-        letters = list(string.ascii_lowercase)
-        name = (''.join(random.choice(letters) for i in range(10)).title())
-        title = (''.join(random.choice(letters) for i in range(6)).title())
+        converter = Conventer()
+        name, surname, title = converter.get_random_name_surname_title()
 
         author_name.send_keys(name)
         title_book.send_keys(title)
@@ -130,9 +123,8 @@ class BookTestCase(unittest.TestCase):
         author_surname = self.driver.find_element_by_name("surname")
         title_book = self.driver.find_element_by_name("title")
 
-        letters = list(string.ascii_lowercase)
-        surname = (''.join(random.choice(letters) for i in range(10)).title())
-        title = (''.join(random.choice(letters) for i in range(6)).title())
+        converter = Conventer()
+        name, surname, title = converter.get_random_name_surname_title()
 
         author_surname.send_keys(surname)
         title_book.send_keys(title)
