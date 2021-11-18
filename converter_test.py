@@ -16,7 +16,7 @@ class Conventer:
     def add_book(self):
         chrome_options = self.add_chrome_options()
 
-        driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32 (2)/chromedriver.exe',
+        driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32_5/chromedriver.exe',
                                        options=chrome_options)
         driver.get('http://localhost:8080/books.html')
 
@@ -40,7 +40,7 @@ class Conventer:
 
     def add_hire(self, book_id):
         chrome_options = self.add_chrome_options()
-        self.driver_hire = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32 (2)/chromedriver.exe',
+        self.driver_hire = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32_5/chromedriver.exe',
                                             options=chrome_options)
         self.driver_hire.get('http://localhost:8080/hires.html')
 
@@ -67,7 +67,7 @@ class Conventer:
     def delete_book(self):
         chrome_options = self.add_chrome_options()
 
-        driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32 (2)/chromedriver.exe',
+        driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32_5/chromedriver.exe',
                                        options=chrome_options)
         driver.get('http://localhost:8080/books.html')
 
@@ -84,7 +84,7 @@ class Conventer:
 
     def return_book(self, book_id):
         chrome_options = self.add_chrome_options()
-        self.driver_hire = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32 (2)/chromedriver.exe',
+        self.driver_hire = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32_5/chromedriver.exe',
                                             options=chrome_options)
         self.driver_hire.get('http://localhost:8080/hires.html')
 

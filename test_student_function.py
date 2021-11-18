@@ -9,7 +9,7 @@ class StudentTestCase(unittest.TestCase):
         converter = Conventer()
         chrome_options = converter.add_chrome_options()
 
-        self.driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32 (2)/chromedriver.exe',
+        self.driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32_5/chromedriver.exe',
                                   options=chrome_options)
         self.driver.get('http://localhost:8080')
 

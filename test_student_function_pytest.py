@@ -12,7 +12,7 @@ class TestStudentCase:
         chrome_options.add_argument("--disable-web-security")
         chrome_options.add_argument("--disable-site-isolation-trials")
 
-        self.driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32 (2)/chromedriver.exe',
+        self.driver = webdriver.Chrome(r'C:\Users\kszpo\Downloads\chromedriver_win32_5/chromedriver.exe',
                                        options=chrome_options)
         self.driver.get('http://localhost:8080')
 
